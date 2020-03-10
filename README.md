@@ -1,1 +1,7 @@
 # leetcode
+
+Category:
+
+leetcode 
+
+algorithm

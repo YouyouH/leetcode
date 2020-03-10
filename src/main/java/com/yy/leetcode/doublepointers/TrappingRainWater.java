@@ -25,6 +25,30 @@ package com.yy.leetcode.doublepointers;
 public class TrappingRainWater {
 
     public int trap(int[] height) {
-        return 0;
+        if(height == null || height.length == 0){
+            return 0;
+        }
+        //initialize two pointers
+        int left = 0;
+        int right = height.length-1;
+
+        int leftMax = height[left];
+        int rightMax = height[right];
+
+        int result = 0;
+
+        while(left<right){
+
+            if(height[left] < height[right]){
+                leftMax = Math.max(height[left],leftMax);
+                result = result + leftMax - height[left];
+                left++;
+            }else{
+                rightMax = Math.max(height[right], rightMax);
+                result = result + rightMax - height[right];
+                right--;
+            }
+        }
+        return result;
     }
 }
