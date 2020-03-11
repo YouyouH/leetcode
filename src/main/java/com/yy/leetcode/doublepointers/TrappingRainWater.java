@@ -11,7 +11,7 @@ package com.yy.leetcode.doublepointers;
  * 暴力法就是对诶一根柱子都计算一遍左右两边柱子的高度。
  *
  * 改进：1.用备忘录法记录左右两边的最高值
- *      2.双指针法。
+ *      2.双指针法记录两边最高值。
  *          从动态编程方法的示意图中我们注意到，只要 right_max[i]>left_max[i]\text{right\_max}[i]>\text{left\_max}[i]right_max[i]>left_max[i] （元素 0 到元素 6），积水高度将由 left_max 决定，类似地 left_max[i]>right_max[i]\text{left\_max}[i]>\text{right\_max}[i]left_max[i]>right_max[i]（元素 8 到元素 11）。
  *          所以我们可以认为如果一端有更高的条形块（例如右端），积水的高度依赖于当前方向的高度（从左到右）。当我们发现另一侧（右侧）的条形块高度不是最高的，我们则开始从相反的方向遍历（从右到左）。
  *          我们必须在遍历时维护 left_max\text{left\_max}left_max 和 right_max\text{right\_max}right_max ，但是我们现在可以使用两个指针交替进行，实现 1 次遍历即可完成。
