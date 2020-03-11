@@ -1,4 +1,4 @@
-package com.yy.leetcode.doublepointers;
+package com.yy.leetcode.twopointers;
 
 /**
  * @author youyouhuang
