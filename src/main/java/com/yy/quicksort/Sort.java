@@ -5,6 +5,6 @@ package com.yy.quicksort;
  * @create 2020-03-10
  * @desc
  **/
-public interface QuickSort {
+public interface Sort {
     void sort(Comparable[] a);
 }

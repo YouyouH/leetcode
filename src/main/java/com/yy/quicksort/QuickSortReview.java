@@ -7,7 +7,7 @@ package com.yy.quicksort;
  * @desc
  **/
 
-public class QuickSortReview implements QuickSort{
+public class QuickSortReview implements Sort {
 
     @Override
     public void sort(Comparable[] a) {

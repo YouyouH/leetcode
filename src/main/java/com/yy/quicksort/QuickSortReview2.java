@@ -13,7 +13,7 @@ package com.yy.quicksort;
  * 1.左右两边值交换以后没有移动左右指针
  * 2.指针移动没有注意边界调节
  */
-public class QuickSortReview2 implements QuickSort{
+public class QuickSortReview2 implements Sort {
     @Override
     public void sort(Comparable[] a) {
         //递归，输入是数组，数组起点，数组终点

@@ -13,7 +13,7 @@ package com.yy.quicksort;
  * 递归函数input: array，start,end。因为是在原函数上排序所以需要起点和终点位置。
  */
 
-public class QuickSortImpl implements QuickSort {
+public class QuickSortImpl implements Sort {
 
     @Override
     public void sort(Comparable[] a) {

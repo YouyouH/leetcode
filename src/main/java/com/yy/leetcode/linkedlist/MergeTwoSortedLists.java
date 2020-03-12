@@ -8,7 +8,7 @@ package com.yy.leetcode.linkedlist;
  **/
 
 /**
- * 对于新生成的list,设置一个哨兵节点prehead 和前置指针 pre
+ * 对于新生成的list,设置一个哨兵节点prehead 和前置指针 pre。往哨兵节点后面追加节点。
  */
 public class MergeTwoSortedLists {
 

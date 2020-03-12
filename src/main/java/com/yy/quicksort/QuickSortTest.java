@@ -6,7 +6,7 @@ import org.junit.Test;
 public class QuickSortTest {
 
 //    QuickSort quickSort = new QuickSortImpl();
-    QuickSort quickSort = new QuickSortReview2();
+    Sort quickSort = new QuickSortReview2();
 
     @Test
     public void sort() {
