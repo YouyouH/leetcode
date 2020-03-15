@@ -13,20 +13,37 @@ package com.yy.leetcode.linkedlist;
 public class MergeTwoSortedLists {
 
     public ListNode mergeTwoLists(ListNode l1, ListNode l2) {
+        //prehead是新list 的头
+        ListNode prehead = new ListNode(-1);
 
+        //指针用来往新生成的list后面追加node
+        ListNode pre = prehead;
 
-        return null;
+        //遍历l1,l2
+        return merge(l1, l2, pre, prehead);
+
     }
 
+    private ListNode merge(ListNode l1, ListNode l2, ListNode pre, ListNode prehead) {
+        while (l1 != null && l2 != null) {
+            if (l1.val < l2.val) {
+                pre.next = l1;
+                pre = pre.next;
+                l1 = l1.next;
+            } else {
+                pre.next = l2;
+                pre = pre.next;
+                l2 = l2.next;
+            }
+        }
+        if (l1 != null) {
+            pre.next = l1;
+        }
+        if (l2 != null) {
+            pre.next = l2;
+        }
+        return prehead.next;
 
-}
-
-class ListNode {
-    int val;
-    ListNode next;
-
-    ListNode(int x) {
-        val = x;
     }
 }
 
