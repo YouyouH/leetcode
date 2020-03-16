@@ -8,7 +8,10 @@ Approach
 
     Most of the problems on this pattern requires a solution that can be accepted in O(n^2) complexity.
     
-```java
+```
+如果条件是两个string,则i,j表示长度为 i 的子串和长度为 j 的子串。
+dp[i][j] 表示结果
+
 // i - indexing string s1
 // j - indexing string s2
 for (int i = 1; i <= n; ++i) {
@@ -21,8 +24,11 @@ for (int i = 1; i <= n; ++i) {
    }
 }
 ```
-    If you are given one string s the approach may little vary
 
+```
+If you are given one string s the approach may little vary
+如果条件是给一个string,则外层循环表示string 长度，从1开始。
+i,j表示string 起点和终点。 j = l + 1;
 
 for (int l = 1; l < n; ++l) {
    for (int i = 0; i < n-l; ++i) {
@@ -34,3 +40,4 @@ for (int l = 1; l < n; ++l) {
        }
    }
 }
+```
