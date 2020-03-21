@@ -13,8 +13,14 @@ class ListNode {
         val = x;
     }
 
-    @Override
-    public String toString(){
-        return String.valueOf(val);
-    }
+//    @Override
+//    public String toString(){
+//        StringBuilder builder = new StringBuilder();
+//        ListNode root = this;
+//        while(root != null){
+//            builder.append(root.val);
+//            root = root.next;
+//        }
+//        return builder.toString();
+//    }
 }
