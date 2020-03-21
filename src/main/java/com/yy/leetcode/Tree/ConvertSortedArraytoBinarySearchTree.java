@@ -26,7 +26,8 @@ public class ConvertSortedArraytoBinarySearchTree {
         if (start > end) {
             return null;
         }
-        int middle = (start + end) / 2;
+        //如果 start + end > Interger.max 会报错，这里采用位运算的方式避免
+        int middle = (start + end) >>> 1;
         TreeNode root = new TreeNode(nums[middle]);
         root.left = constructTree(nums,start,middle-1);
         root.right = constructTree(nums,middle+1,end);
