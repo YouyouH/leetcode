@@ -1,7 +1,5 @@
 package com.yy.leetcode.Tree;
 
-import java.util.LinkedList;
-
 /**
  * @author youyouhuang
  * @create 2020-03-17
