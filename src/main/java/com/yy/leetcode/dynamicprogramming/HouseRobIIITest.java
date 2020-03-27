@@ -1,8 +1,6 @@
-package com.yy.leetcode;
+package com.yy.leetcode.dynamicprogramming;
 
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class HouseRobIIITest {
 
