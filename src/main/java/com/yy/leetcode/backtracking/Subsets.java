@@ -9,7 +9,7 @@ import java.util.Set;
  * @author youyouhuang
  * @create 2020-03-26
  * @desc https://leetcode.com/problems/subsets/
- * 给定一组不含重复元素的整数数组 nums，返回该数组所有可能的子集（幂集）。
+ * 给定一组  不含重复元素  的整数数组 nums，返回该数组所有可能的子集（幂集）。
  * 说明：解集不能包含重复的子集。
  **/
 
@@ -19,7 +19,19 @@ import java.util.Set;
  */
 public class Subsets {
 
-    //字典排序
+    //回溯 backtracking
+    public List<List<Integer>> subsets0(int[] nums) {
+        List<List<Integer>>results = new ArrayList<>();
+
+        traverse(nums,results,new ArrayList<Integer>());
+        return results;
+    }
+
+    private void traverse(int[] nums, List<List<Integer>> results, ArrayList<Integer> cur) {
+
+    }
+
+    //字典
     public List<List<Integer>> subsets(int[] nums) {
         List<List<Integer>> output = new ArrayList();
         int n = nums.length;
@@ -31,14 +43,14 @@ public class Subsets {
             // append subset corresponding to that bitmask
             List<Integer> curr = new ArrayList();
             for (int j = 0; j < n; ++j) {
-                if (bitmask.charAt(j) == '1') curr.add(nums[j]);
+                if (bitmask.charAt(j) == '1') {curr.add(nums[j]);}
             }
             output.add(curr);
         }
         return output;
     }
 
-    //迭代排序
+    //迭代
     public List<List<Integer>> subsets1(int[] nums) {
 
         List<List<Integer>> results = new ArrayList<>();
