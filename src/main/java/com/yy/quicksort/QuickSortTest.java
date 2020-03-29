@@ -10,11 +10,11 @@ public class QuickSortTest {
 
     @Test
     public void sort() {
-
-        Comparable[] a = new Integer[]{4,3,2,1};
+        long l = System.nanoTime();
+        Comparable[] a = new Integer[]{2,2,1,2,1,1,1,0,0,2,1,0,2,1,2,2,1,1,1,1,1,0,2,0,2,0,2,2,1,0,2,1,0,2,1,2,0,0,0,0,2,1,1,2,0,1,2,2,0,0,2,2,0,1,0,1,0,0,1,1,1,0,0,2,2,2,1,0,0,2,1,0,1,0,2,2,1,2,1,1,2,1,1,0,0,2,1,0,0};
 
         quickSort.sort(a);
-
+        System.out.println(System.nanoTime() - l);
         Assert.assertArrayEquals(new Integer[]{1,2,3,4}, a);
 
     }
