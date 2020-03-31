@@ -18,7 +18,7 @@ public class ThreeWayQuickSort {
             return;
         }
         int[] p = partion(nums, start, end);
-        quickSort(nums, 0, p[0]-1);
+        quickSort(nums, start, p[0]-1);
         quickSort(nums, p[1]+1, end);
     }
 

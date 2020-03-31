@@ -25,7 +25,7 @@ public class QuickSortImpl implements Sort {
             return;
         }
         int partion = partion(a, low, hi);
-        quickSort(a, 0, partion - 1);
+        quickSort(a, low, partion - 1);
         quickSort(a, partion + 1, hi);
 
     }

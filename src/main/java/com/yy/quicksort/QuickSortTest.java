@@ -15,7 +15,6 @@ public class QuickSortTest {
 
         quickSort.sort(a);
         System.out.println(System.nanoTime() - l);
-        Assert.assertArrayEquals(new Integer[]{1,2,3,4}, a);
 
     }
 

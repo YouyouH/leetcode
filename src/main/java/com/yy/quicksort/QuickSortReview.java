@@ -19,7 +19,7 @@ public class QuickSortReview implements Sort {
             return;
         }
         int partition = partition(array, left, right);
-        quickSort(array, 0, partition - 1);
+        quickSort(array, left, partition - 1);
         quickSort(array, partition + 1, right);
 
     }

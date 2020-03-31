@@ -29,7 +29,7 @@ public class SortColors {
             return;
         }
         int p = partion(nums, start, end);
-        quickSort(nums, 0, p - 1);
+        quickSort(nums, start, p - 1);
         quickSort(nums, p + 1, end);
     }
 

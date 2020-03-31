@@ -28,7 +28,7 @@ public class QuickSortReview2 implements Sort {
         }
         //partition方法会将数组分为左中右三部分
         int partition = partition(a,start,end);
-        quickSort(a,0,partition-1);
+        quickSort(a,start,partition-1);
         quickSort(a,partition+1,end);
 
     }

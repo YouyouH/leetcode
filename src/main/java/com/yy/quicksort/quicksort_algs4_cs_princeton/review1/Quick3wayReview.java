@@ -37,7 +37,7 @@ public class Quick3wayReview implements Sort {
                 i++;
             }
         }
-        quickSort(array,0,lo-1);
+        quickSort(array,start,lo-1);
         quickSort(array,hi+1,end);
     }
 
