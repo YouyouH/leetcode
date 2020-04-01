@@ -24,7 +24,7 @@
     
 ###题目类型：
     1.全排列，先排序。AB，BA都算。这种类型每次递归都要从头开始循环，并且用辅助数组booolen[] 来去掉已经用过的字符。
-   [活字印刷](LetterCasePermutation.java)
+   [活字印刷](../backtracking/LetterCasePermutation.java)
    
     2.最大子集，先排序。AB，BA是重复的。这种类型每次递归时index+1，不要从头开始。
-   [最大子集](SubsetsII.java)
+   [最大子集](../backtracking/SubsetsII.java)

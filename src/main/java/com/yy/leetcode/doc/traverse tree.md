@@ -1,6 +1,6 @@
 ##Tree
 
-###Tree 的遍历方法 [TreeIterator](TreeIterator.java)
+###Tree 的遍历方法 [TreeIterator](../Tree/TreeIterator.java)
 
     1.前序遍历(递归/stack迭代)
     2.中序遍历(递归/stack迭代迭代)
@@ -9,9 +9,20 @@
     4.广度优先(用queue迭代)
     5.深度优先(就是前序遍历)
 
-###Tree的构造 [ConvertSortedArraytoBST](ConvertSortedArraytoBinarySearchTree.java)
-
-
+###Tree的构造 [ConvertSortedArraytoBST](../Tree/ConvertSortedArraytoBinarySearchTree.java)
+```java
+private TreeNode constructTree(int[] nums, int start, int end) {
+        if (start > end) {
+            return null;
+        }
+        //如果 start + end > Interger.max 会报错，这里采用位运算的方式避免
+        int middle = (start + end) >>> 1;
+        TreeNode root = new TreeNode(nums[middle]);
+        root.left = constructTree(nums,start,middle-1);
+        root.right = constructTree(nums,middle+1,end);
+        return root;
+    }
+```
 
 ###二叉搜索树（Binary Search Tree）是指一棵空树或具有如下性质的二叉树：
 
