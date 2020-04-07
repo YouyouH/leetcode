@@ -6,5 +6,5 @@ package com.yy.quicksort;
  * @desc
  **/
 public interface Sort {
-    void sort(Comparable[] a);
+    void sort(Comparable[] array);
 }
