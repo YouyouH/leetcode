@@ -48,7 +48,12 @@ public class BestTimetoBuyandSellStockIV {
         for (int i = 2; i <= days; i++) {
             for (int l = 1; l <= k; l++) {
                 //为什么是dp[i - 1][1][l] 而不是dp[i - 1][1][l-1]???????
+                //因为一次交易表示 买+卖。
+
+                //当前不持有 = max(前一天不持有，前一天持有，当前卖了)
                 dp[i][0][l] = Math.max(dp[i - 1][0][l], dp[i - 1][1][l] + prices[i - 1]);
+
+                //当前持有 = max(前一天不持有，今天买入，前一天持有，今天不变)
                 dp[i][1][l] = Math.max(dp[i - 1][1][l], dp[i - 1][0][l - 1] - prices[i - 1]);
             }
         }
