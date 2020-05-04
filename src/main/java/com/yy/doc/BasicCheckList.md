@@ -19,9 +19,9 @@ LinkList
 
 Tree
 
-|                  |      |      |
-| ---------------- | ---- | ---- |
-| preorder travel  |      |      |
-|                  |      |      |
-| postorder travel |      |      |
+|                  |          |      |
+| ---------------- | -------- | ---- |
+| preorder travel  | 5/4/2020 |      |
+|                  |          |      |
+| postorder travel |          |      |
 
