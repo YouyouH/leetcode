@@ -12,6 +12,13 @@ package com.yy.leetcode.jianzhioffer;
  **/
 public class LivingPeopleLCCI {
 
+    /**
+     * 方法一：
+     * 用一个长度为101的数组表示每年的人数。
+     * @param birth
+     * @param death
+     * @return
+     */
     public int maxAliveYear(int[] birth, int[] death) {
         int[] years = new int[101];
         int max = 0;
@@ -26,6 +33,15 @@ public class LivingPeopleLCCI {
                 return i+1900;
             }
         }
+        return 0;
+    }
+
+    /**
+     * 方法二：
+     * 先对死亡和出生数组排序
+     *
+     */
+    public int maxAliveYear1(int[] birth, int[] death) {
         return 0;
     }
 }

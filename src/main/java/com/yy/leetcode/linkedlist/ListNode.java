@@ -5,9 +5,9 @@ package com.yy.leetcode.linkedlist;
  * @create 2020-03-15
  * @desc
  **/
-class ListNode {
+public class ListNode {
     int val;
-    ListNode next;
+    public ListNode next;
 
     ListNode(int x) {
         val = x;
