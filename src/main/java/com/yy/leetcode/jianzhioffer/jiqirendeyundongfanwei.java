@@ -34,11 +34,14 @@ public class jiqirendeyundongfanwei {
         if (row < 0 || row >= map.length || col < 0 || col >= map[0].length) {
             return;
         }
-
+        if(map[row][col] == 2){
+            return;
+        }
         if (map[row][col] == 0 ) {
             if(qualify(row, col, k)) {
                 map[row][col] = 1;
             }else{
+                map[row][col] = 2;
                 return;
             }
         }else{
