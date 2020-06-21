@@ -1,9 +1,7 @@
-package com.yy.leetcode;
+package com.yy.leetcode.math;
 
 import org.junit.Assert;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 public class RomantoIntegerTest {
 
