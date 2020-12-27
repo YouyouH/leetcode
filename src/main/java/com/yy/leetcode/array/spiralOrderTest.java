@@ -9,6 +9,9 @@ public class spiralOrderTest {
 
     @Test
     public void spiralOrder() {
+
         spiralOrder.spiralOrder(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
+        //方法二
+        spiralOrder.spiralOrder2(new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}});
     }
 }
