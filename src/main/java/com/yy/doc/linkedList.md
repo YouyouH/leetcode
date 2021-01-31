@@ -15,6 +15,16 @@
     current.next = pre;
     pre = current;
     current = tmp;
+    
+5.从头开始遍历得到大于等于curr的前置节点，然后把curr插入到前置节点后面
+        //得到大于等于curr的前置节点
+        ListNode prev = dummyHead;
+        while (prev.next.val <= curr.val) {
+        prev = prev.next;
+        }
+        lastSorted.next = curr.next;
+        curr.next = prev.next;
+        prev.next = curr;
 ```
 
 
