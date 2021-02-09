@@ -14,6 +14,7 @@ type NumArray struct {
 	cache []int
 }
 
+//前缀和，先把前i个数的和计算并缓存起来
 func Constructor(nums []int) NumArray {
 	cache := make([]int, len(nums)+1)
 	cache[0] = 0
