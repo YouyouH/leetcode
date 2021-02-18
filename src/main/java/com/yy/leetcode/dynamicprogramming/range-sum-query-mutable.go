@@ -5,14 +5,14 @@ package main
 线段树: segmentTree.md
 tree[i] = tree[2i] + tree[2i+1]
 */
-type NumArray struct {
+type NumArray2 struct {
 	//[n] - [2n-1] 存储的是原始数组
 	//[0] - [n-1] 存储的是处理过的值
 	tree []int
 	n    int
 }
 
-func Constructor(nums []int) NumArray {
+func Constructor2(nums []int) NumArray2 {
 	n := len(nums)
 	tree := make([]int, 2*n)
 	//从[n] 到[2n-1]是
@@ -25,7 +25,7 @@ func Constructor(nums []int) NumArray {
 		tree[i] = tree[2*i] + tree[2*i+1]
 	}
 
-	return NumArray{
+	return NumArray2{
 		tree: tree,
 		n:    n,
 	}
@@ -34,7 +34,7 @@ func Constructor(nums []int) NumArray {
 /**
 先更新数组，再从下往上更新
 */
-func (this *NumArray) Update(index int, val int) {
+func (this *NumArray2) Update(index int, val int) {
 	pos := index + this.n
 	this.tree[pos] = val
 	for pos > 0 {
@@ -49,7 +49,7 @@ func (this *NumArray) Update(index int, val int) {
 	}
 }
 
-func (this *NumArray) SumRange(left int, right int) int {
+func (this *NumArray2) SumRange(left int, right int) int {
 	left += this.n
 	right += this.n
 	sum := 0
@@ -72,7 +72,7 @@ func (this *NumArray) SumRange(left int, right int) int {
 }
 
 /**
- * Your NumArray object will be instantiated and called as such:
+ * Your NumArray2 object will be instantiated and called as such:
  * obj := Constructor(nums);
  * obj.Update(index,val);
  * param_2 := obj.SumRange(left,right);

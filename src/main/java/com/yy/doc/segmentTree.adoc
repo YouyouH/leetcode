@@ -1,0 +1,8 @@
+*线段树*
+线段树是算法竞赛中常用的用来维护 区间信息 的数据结构。
+https://oi-wiki.org/ds/seg/
+image:img.png[img.png]
+
+image:img_1.png[img_1.png]
+
+image:img_2.png[img_2.png]
