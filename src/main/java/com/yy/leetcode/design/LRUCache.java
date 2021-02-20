@@ -71,6 +71,7 @@ public class LRUCache {
             this.map.put(key, node);
             if(size > capacity){
                 removeTail();
+                size--;
             }
             insertAtHead(node);
 
