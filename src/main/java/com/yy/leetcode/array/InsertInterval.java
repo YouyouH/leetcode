@@ -23,7 +23,46 @@ import java.util.Map;
  */
 public class InsertInterval {
 
+    //以newInterval为固定区间，遍历intervals判断：1.直接加入 2.合并区间
     public int[][] insert(int[][] intervals, int[] newInterval) {
+
+        if(0 == intervals.length){
+            return new int[][]{newInterval};
+        }
+
+        int left = newInterval[0];
+        int right = newInterval[1];
+
+        List<int[]> res = new ArrayList<>();
+
+        boolean merge = false;
+
+        for (int[] interval : intervals) {
+            if (interval[0] > right) {
+                if(!merge){
+                    res.add(new int[]{left, right});
+                    merge = true;
+                }
+                //区间在新区间右边，不用合并，直接加入结果集
+                res.add(interval);
+
+            } else if (interval[1] < left) {
+                //区间在新区间左边，不用合并，直接加入结果集
+                res.add(interval);
+            } else {
+                left = Math.min(left, interval[0]);
+                right = Math.max(right, interval[1]);
+            }
+
+        }
+        if (!merge) {
+            res.add(new int[]{left, right});
+
+        }
+        return res.toArray(new int[][]{});
+    }
+
+    public int[][] insert2(int[][] intervals, int[] newInterval) {
 
         if(0 == intervals.length){
             return new int[][]{newInterval};
