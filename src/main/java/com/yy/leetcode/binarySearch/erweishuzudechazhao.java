@@ -35,7 +35,24 @@ package com.yy.leetcode.binarySearch;
  */
 public class erweishuzudechazhao {
     public boolean findNumberIn2DArray(int[][] matrix, int target) {
-        //先上下，再左右
 
+        if(matrix.length == 0) return false;
+
+        int len = 0;
+        int col = matrix[0].length - 1;
+
+        while (len <= matrix.length - 1 && col >= 0) {
+
+            int start = matrix[len][col];
+
+            if (start == target) return true;
+
+            if (target < start) {
+                col--;
+            } else {
+                len++;
+            }
+        }
+        return false;
     }
 }
