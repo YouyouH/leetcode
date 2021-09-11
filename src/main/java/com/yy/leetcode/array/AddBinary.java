@@ -30,6 +30,7 @@ import java.util.Arrays;
 public class AddBinary {
 
     public String addBinary(String a, String b) {
+        //先区分出大数组和小数组
         if (a.charAt(0) == '0' && b.charAt(0) == '0') {
             return "0";
         }
@@ -42,7 +43,8 @@ public class AddBinary {
             ac = b.toCharArray();
             bc = a.toCharArray();
         }
-        //把两个数组补齐
+        //把两个数组补齐.
+        //改进： 不需要用新的数组，直接判断指针是不是超过了数组大小
         char[] tc = new char[ac.length];
         Arrays.fill(tc, '0');
         int j = 0;

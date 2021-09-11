@@ -9,6 +9,7 @@ import java.util.List;
  */
 public class UniqueBinarySearchTreesII {
 
+    //递归
     public List<TreeNode> generateTrees(int n) {
 
         if(n < 1) return new ArrayList<>();

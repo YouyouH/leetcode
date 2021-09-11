@@ -1,6 +1,6 @@
 #窗口函数
 #dense_rank() over (partition by 'column' order by 'column') from table;
-#为什么加窗口函数? partion会把表分成窗口
+#为什么叫窗口函数? partion会把表分成窗口
 select Score, dense_rank() over (order by Score Desc) as 'Rank'
 from Scores;
 
@@ -18,7 +18,7 @@ where ranking = 1;
 select Email
 from Person
 group by Email
-having count(Email) > 1
+having count(Email) > 1;
 
 #in 的元组用法
 select d.Name as Department, e.Name as Employee, Salary
@@ -33,7 +33,7 @@ where (DepartmentId, Salary) in
       );
 # DATEDIFF 函数用来比较date类型数据
 select a.id from Weather a inner join Weather b on DATEDIFF(a.recordDate, b.recordDate) = 1
-where a.Temperature > b.Temperature order by a.recordDate ASC
+where a.Temperature > b.Temperature order by a.recordDate ASC;
 
 #异或xor
 select name,population,area from world where population > 250000000 xor area > 3000000
