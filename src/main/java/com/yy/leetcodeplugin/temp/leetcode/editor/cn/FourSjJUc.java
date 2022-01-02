@@ -78,6 +78,7 @@ class Solution {
 
             for (int i = start; i < candidates.length; i++) {
                 //从第二个开始比较，如果跟前面一样的就跳过
+                //技巧是不要比较i+1和i，容易溢出
                 if (i > start && candidates[i] == candidates[i - 1]) {
                     continue;
                 }
