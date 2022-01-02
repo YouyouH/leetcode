@@ -1,0 +1,43 @@
+### 解题思路
+
+此处撰写解题思路
+
+### 代码
+
+* java
+
+```java
+class Solution {
+    public int divide(int a, int b) {
+        if (b == 0)
+            return 0;
+        if (a == Integer.MIN_VALUE){
+            if (b == -1) return Integer.MAX_VALUE;
+            if (b == 1) return Integer.MIN_VALUE;
+        }
+        if (b == Integer.MIN_VALUE){
+            if (a == Integer.MIN_VALUE) return 1;
+            else return 0;
+        }
+        int sign = -1;//判断结果正负
+        //a,b均设为负数，防止越界
+        if (a > 0) {
+            sign = -sign;
+            a = -a;
+        }
+        if (b > 0) {
+            sign = -sign;
+            b = -b;
+        }
+        int res = 0;
+        while (a <= b){
+            a -= b;
+            ++res;
+        }
+        if (sign > 0)
+            res = -res;
+        return res;
+    }
+}
+```
+
