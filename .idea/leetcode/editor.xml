@@ -78,6 +78,15 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/HPov7L.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/HPov7L.md" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/HPov7L.java" />
+              <option name="questionId" value="1000297" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/LongestCommonPrefix.java">
           <value>
             <LeetcodeEditor>
