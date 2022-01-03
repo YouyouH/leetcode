@@ -8,7 +8,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/[1995]统计特殊四元组.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/[1995]统计特殊四元组.java" />
-              <option name="questionId" value="2122" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -16,7 +15,6 @@
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/../AppData/Local/Temp/leetcode/editor/cn/[110]平衡二叉树.java" />
-              <option name="questionId" value="110" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -24,7 +22,6 @@
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/../AppData/Local/Temp/leetcode/editor/cn/[155]最小栈.java" />
-              <option name="questionId" value="155" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -32,7 +29,6 @@
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/../AppData/Local/Temp/leetcode/editor/cn/[18]四数之和.java" />
-              <option name="questionId" value="18" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -40,7 +36,6 @@
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/../AppData/Local/Temp/leetcode/editor/cn/[203]移除链表元素.java" />
-              <option name="questionId" value="203" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -48,7 +43,6 @@
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/../AppData/Local/Temp/leetcode/editor/cn/[217]存在重复元素.java" />
-              <option name="questionId" value="217" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -56,7 +50,17 @@
           <value>
             <LeetcodeEditor>
               <option name="path" value="$PROJECT_DIR$/../AppData/Local/Temp/leetcode/editor/cn/[257]二叉树的所有路径.java" />
-              <option name="questionId" value="257" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/AseY1I.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/AseY1I.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com剑指 Offer II 005" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/AseY1I.java" />
+              <option name="titleSlug" value="aseY1I" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -65,7 +69,17 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/BLyHh0.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/BLyHh0.java" />
-              <option name="questionId" value="1000346" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/DayOfTheWeek.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/DayOfTheWeek.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com1185" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/DayOfTheWeek.java" />
+              <option name="titleSlug" value="day-of-the-week" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -74,7 +88,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/FourSjJUc.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/FourSjJUc.java" />
-              <option name="questionId" value="1000232" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -83,7 +96,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/HPov7L.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/HPov7L.java" />
-              <option name="questionId" value="1000297" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -92,7 +104,17 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/LongestCommonPrefix.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/LongestCommonPrefix.java" />
-              <option name="questionId" value="14" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/OneFGaJU.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/OneFGaJU.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com剑指 Offer II 007" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/OneFGaJU.java" />
+              <option name="titleSlug" value="1fGaJU" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -101,7 +123,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/QIsx9U.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/QIsx9U.java" />
-              <option name="questionId" value="1000292" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -110,7 +131,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/RomanToInteger.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/RomanToInteger.java" />
-              <option name="questionId" value="13" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -119,7 +139,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/TVdhkn.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/TVdhkn.java" />
-              <option name="questionId" value="1000343" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -128,7 +147,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/WGki4K.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/WGki4K.java" />
-              <option name="questionId" value="1000233" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -137,7 +155,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/Xoh6Oh.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/Xoh6Oh.java" />
-              <option name="questionId" value="1000228" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -146,7 +163,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/Ygoe9J.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/Ygoe9J.java" />
-              <option name="questionId" value="1000229" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -155,7 +171,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/RomanToInteger.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/RomanToInteger.java" />
-              <option name="questionId" value="13" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -164,7 +179,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/LongestCommonPrefix.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/LongestCommonPrefix.java" />
-              <option name="questionId" value="14" />
             </LeetcodeEditor>
           </value>
         </entry>
@@ -173,7 +187,6 @@
             <LeetcodeEditor>
               <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/[1995]统计特殊四元组.md" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/[1995]统计特殊四元组.java" />
-              <option name="questionId" value="2122" />
             </LeetcodeEditor>
           </value>
         </entry>
