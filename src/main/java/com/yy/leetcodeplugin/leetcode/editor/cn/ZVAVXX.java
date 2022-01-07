@@ -42,30 +42,62 @@ package com.yy.leetcodeplugin.leetcode.editor.cn;
 public class ZVAVXX{
     public static void main(String[] args) {
          Solution solution = new ZVAVXX().new Solution();
+        solution.numSubarrayProductLessThanK(new int[]{10,5,2,6},100);
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int numSubarrayProductLessThanK(int[] nums, int k) {
-        //滑动窗口，i表示起点，j表示窗口大小。
-        //i不变，扩大窗口大小直到超过k,然后移动i,窗口初始化为0，继续这个过程
-
+        //滑动窗口，left表示左边，right表示右边
+        //右边先移动，超出k之后再移动左边
         int res = 0;
-        if (k < 0 ) {
-            return 0;
-        }
+        int left = 0;
 
-        for (int i = 0; i < nums.length; i++) {
-            int max = 1;
-            for (int j = 1; j <= nums.length - i; j++) {
-                if ((max *= nums[i + j - 1]) < k) {
+        int max = 1;
+        for (int right = 0; right < nums.length; right++) {
+            while (right < nums.length && (max *= nums[right]) < k) {
+                System.out.println(left+","+right);
+                //当max小于k时，不断通过右移扩大窗口大小，直到超过k或者达到边界
+                right++;
+                res++;
+
+            }
+
+            if (left < nums.length && left <= right) {
+                left++;
+                //移动左边界缩小窗口
+                if((max /= nums[left-1]) < k){
                     res++;
-                }else {
-                    //都是正整数，所以一旦超过后面的就不用考虑了
-                    break;
+                    System.out.println(left+","+right);
                 }
+
             }
         }
         return res;
+
+
+
+//        太慢了！！！滑动窗口实现不对
+//        //滑动窗口，i表示起点，j表示窗口大小。
+//        //i不变，扩大窗口大小直到超过k,然后移动i,窗口初始化为0，继续这个过程
+//
+//        int res = 0;
+//        if (k < 0 ) {
+//            return 0;
+//        }
+//
+//        //太慢了！！！滑动窗口实现不对
+//        for (int i = 0; i < nums.length; i++) {
+//            int max = 1;
+//            for (int j = 1; j <= nums.length - i; j++) {
+//                if ((max *= nums[i + j - 1]) < k) {
+//                    res++;
+//                }else {
+//                    //都是正整数，所以一旦超过后面的就不用考虑了
+//                    break;
+//                }
+//            }
+//        }
+//        return res;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
