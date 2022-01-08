@@ -49,34 +49,28 @@ class Solution {
     public int numSubarrayProductLessThanK(int[] nums, int k) {
         //滑动窗口，left表示左边，right表示右边
         //右边先移动，超出k之后再移动左边
+        //右边每移动一格，就新增 right-left+1个子集
         int res = 0;
         int left = 0;
 
         int max = 1;
+
         for (int right = 0; right < nums.length; right++) {
-            while (right < nums.length && (max *= nums[right]) < k) {
-                System.out.println(left+","+right);
-                //当max小于k时，不断通过右移扩大窗口大小，直到超过k或者达到边界
-                right++;
-                res++;
+            max *= nums[right];
 
-            }
-
-            if (left < nums.length && left <= right) {
+            //如果大于K就收缩左边指针，直到小于k
+            while (left < nums.length && left <= right && max >= k) {
+                max /= nums[left];
                 left++;
                 //移动左边界缩小窗口
-                if((max /= nums[left-1]) < k){
-                    res++;
-                    System.out.println(left+","+right);
-                }
-
             }
+            res += right - left + 1;
         }
         return res;
 
 
-
 //        太慢了！！！滑动窗口实现不对
+
 //        //滑动窗口，i表示起点，j表示窗口大小。
 //        //i不变，扩大窗口大小直到超过k,然后移动i,窗口初始化为0，继续这个过程
 //
