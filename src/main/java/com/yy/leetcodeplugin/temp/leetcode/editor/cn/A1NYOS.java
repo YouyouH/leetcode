@@ -47,6 +47,7 @@ class Solution {
     public int findMaxLength(int[] nums) {
         //前缀和，计算前i个数的 0 1 分布，
 
+        //还没做完！！！！！！！！！！！！！！！！！！！！！！！！！！！！
         int count = 0;
         int res = 0;
         Map<Integer, Integer> preSum2Count = new HashMap<>();
@@ -63,7 +64,7 @@ class Solution {
                 //第一次出现的时候为什么计算最大值？
             }
         }
-
+        return 0;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
