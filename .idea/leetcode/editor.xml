@@ -75,6 +75,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/A1NYOS.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/A1NYOS.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com剑指 Offer II 011" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/A1NYOS.java" />
+              <option name="titleSlug" value="A1NYOS" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/A7VOhD.java">
           <value>
             <LeetcodeEditor>
@@ -249,6 +260,17 @@
               <option name="host" value="leetcode-cn.com" />
               <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/ThreeU1WK4.java" />
               <option name="titleSlug" value="3u1WK4" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/Tvdfij.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/Tvdfij.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com剑指 Offer II 012" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/Tvdfij.java" />
+              <option name="titleSlug" value="tvdfij" />
             </LeetcodeEditor>
           </value>
         </entry>
