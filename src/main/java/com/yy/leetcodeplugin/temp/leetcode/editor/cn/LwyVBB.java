@@ -63,40 +63,40 @@ package com.yy.leetcodeplugin.temp.leetcode.editor.cn;
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-        //题意开始都理解错了，不需要前一个单词的每一个字母都比后一个单词小
+        //题意开始都理解错了，不需要前一个单词的每一个字母都比后一个单词小,只需要从前往后有一个字符小就行了
         public boolean isAlienSorted(String[] words, String order) {
-            Map<Character, Integer> orderMap = new HashMap<>();
-            char[] chars = order.toCharArray();
-            for (int i = 0; i < chars.length; i++) {
-                orderMap.put(chars[i], i);
-            }
+            int[] index = new int[26];
+            for (int i = 0; i < order.length(); ++i)
+                index[order.charAt(i) - 'a'] = i;
 
-            int maxLen = Arrays.stream(words).map(String::length).max(Comparator.naturalOrder()).get();
-            for (int i = 1; i < words.length; i++) {
-                for (int j = 0; j < maxLen; j++) {
-                    if (!compare(orderMap, words[i - 1], words[i], j)) {
-                        return false;
-                    }else {
-                        break;
+            search:
+            for (int i = 0; i < words.length - 1; ++i) {
+                String word1 = words[i];
+                String word2 = words[i + 1];
+
+                // Find the first difference word1[k] != word2[k].
+                for (int k = 0; k < Math.min(word1.length(), word2.length()); ++k) {
+                    if (word1.charAt(k) != word2.charAt(k)) {
+                        // If they compare badly, it's not sorted.
+                        if (index[word1.charAt(k) - 'a'] > index[word2.charAt(k) - 'a'])
+                            return false;
+                        continue search;
                     }
                 }
+
+                // If we didn't find a first difference, the
+                // words are like ("app", "apple").
+                if (word1.length() > word2.length())
+                    return false;
             }
+
             return true;
+
+//            作者：LeetCode
+//            链接：https://leetcode-cn.com/problems/verifying-an-alien-dictionary/solution/yan-zheng-wai-xing-yu-ci-dian-by-leetcode/
+//            来源：力扣（LeetCode）
+//            著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
         }
-
-
-        private boolean compare(Map<Character, Integer> orderMap, String word1, String word2, int j) {
-            if (word1.length() - 1 < j) {
-                return true;
-            }
-            Integer p1 = orderMap.get(word1.charAt(j));
-            Integer p2 = orderMap.get(word2.charAt(j));
-            if (p1 > p2) {
-                return false;
-            }
-            return true;
-        }
-
     }
 //leetcode submit region end(Prohibit modification and deletion)
 
