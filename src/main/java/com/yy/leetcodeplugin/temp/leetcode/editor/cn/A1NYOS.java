@@ -41,30 +41,45 @@ import java.util.Map;
 public class A1NYOS{
     public static void main(String[] args) {
          Solution solution = new A1NYOS().new Solution();
+        solution.findMaxLength(new int[]{0, 1, 0});
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
     public int findMaxLength(int[] nums) {
-        //前缀和，计算前i个数的 0 1 分布，
-
-        //还没做完！！！！！！！！！！！！！！！！！！！！！！！！！！！！
-        int count = 0;
-        int res = 0;
-        Map<Integer, Integer> preSum2Count = new HashMap<>();
+        //前缀和，计算前i个数的 0 1 分布
+        //例如：01101101，前缀和为-1，0，1，0，1，2，1，2。 0表示一样
+        //用哈希表记录位置和前缀和，第一次遇到的前缀和为起点，后面遇到的为终点，不断更新最远距离
+        int[] preSum = new int[nums.length];
+        int sum = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] == 1) {
-                count++;
+            if (nums[i] == 0) {
+                sum -= 1;
+                preSum[i] = sum - 1;
             } else {
-                count--;
+                sum += 1;
             }
-            if (preSum2Count.containsKey(count)) {
-                res = Math.max(res, i - preSum2Count.get(count));
-            } else {
-                preSum2Count.put(i,count);
-                //第一次出现的时候为什么计算最大值？
+            preSum[i] = sum;
+        }
+        int max = 0;
+
+        Map<Integer, Integer> p2sum = new HashMap<>();
+        for (int i = 0; i < preSum.length; i++) {
+            int s = preSum[i];
+            //如果是0则说明01数量刚好一样
+            if (s == 0) {
+                max = Math.max(max, i+1);
+                continue;
+            }
+            if (p2sum.containsKey(s)) {
+                //下一次遇到则更新最大距离
+                max = Math.max(max,i - p2sum.get(s));
+            }else{
+                //第一次遇到则直接保存，作为比较距离的起始位置
+                p2sum.put(s, i);
             }
         }
-        return 0;
+
+        return max;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
