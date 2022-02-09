@@ -160,6 +160,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/Five69nqc.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/Five69nqc.md" />
+              <option name="frontendQuestionId" value="leetcode-cn.com剑指 Offer II 035" />
+              <option name="host" value="leetcode-cn.com" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/Five69nqc.java" />
+              <option name="titleSlug" value="569nqc" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/FourSjJUc.java">
           <value>
             <LeetcodeEditor>
