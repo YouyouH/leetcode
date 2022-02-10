@@ -1,0 +1,47 @@
+我们定义`dfs(idx, target)`为：
+
+> 选中candidate[idx]，同时与从下标为[idx + 1, candidate.length)中选取元素一起构成和为target的所有不重复组合的集合。
+
+本题难点有二：
+
+### 一、避免重复答案
+
+为了避免重复的答案，首先我们要做的就是给数组排序，如果说我**在同一级递归中，遇到两个相同的数**，我们应该只dfs靠前的那一个一次。原因的话，我们可以这样理解，如果现在遇到下标位`idx`，`idx + 1`的两个数是相同的，那么对于集合`dfs(idx, target)` 和 `dfs(idx + 1, target)`，后者就是前者的一个子集，所以**我们在同一级递归中，对于相同的数，只应该dfs一次，并且是下标最小的那一个**。
+
+### 二、剪枝
+
+剪枝就是基于很直接的思想，例如：**前面已经给数组排序了，如果递归的过程中当前值比target大，那么说明后面的值不可能再找出一组元素和为target，所以此时就可以立即结束递归返回。**
+
+* java
+
+```java
+class Solution {
+    public List<List<Integer>> combinationSum2(int[] candidates, int target) {
+        int n = candidates.length;
+        List<List<Integer>> ans = new ArrayList<>();
+        Arrays.sort(candidates);
+        dfs(candidates, n, 0, target, new ArrayList<>(), ans);
+        return  ans;
+    }
+
+    public void dfs(int[] candidate, int n, int idx, int target, List<Integer> list, List<List<Integer>> ans) {
+        if (target == 0) {
+            ans.add(new ArrayList<>(list));
+            return ;
+        }
+        for (int i = idx; i < n; i++) {
+            if (candidate[i] > target) { // 剪枝
+                break;
+            }
+            if (i > idx && candidate[i] == candidate[i - 1]) { // 剪枝、避免重复
+                // 因为前面那个同样的数已经经历过dfs，再拿同样的数dfs就会得到重复的答案
+                continue;
+            }
+            list.add(candidate[i]);
+            dfs(candidate, n, i + 1, target - candidate[i], list, ans);
+            list.remove(list.size() - 1);
+        }
+    }
+}
+```
+
