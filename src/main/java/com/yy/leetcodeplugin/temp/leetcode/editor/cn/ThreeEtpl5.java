@@ -93,37 +93,59 @@ package com.yy.leetcodeplugin.temp.leetcode.editor.cn;
  */
 class Solution {
     public int sumNumbers(TreeNode root) {
-        List<Integer> res = new ArrayList<>();
-        traverseTree(root, new StringBuilder(),res);
-        int sum = 0;
-        for (Integer num : res) {
-            sum += num;
-        }
-        return sum;
+        //Solution2是自己写的，非常慢,思路是把每一条路径都求出来，最后相加
+
+        //这个是抄的答案，并不需要求出每一条路径，
+        return traverseTree(root, 0);
+
     }
 
-    private void traverseTree(TreeNode root, StringBuilder stringBuilder, List<Integer> res) {
+    private int traverseTree(TreeNode root, int preSum) {
         if (root == null) {
-            return;
+            return 0;
         }
 
-        stringBuilder.append(root.val);
-
-        //到达叶子节点了就计算路径
-        if (root.left == null && root.right ==null) {
-            res.add(Integer.valueOf(stringBuilder.toString()));
-            stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-            return;
+        int sum = preSum * 10 + root.val;
+        if (root.left == null && root.right == null) {
+            return sum;
+        } else {
+            return traverseTree(root.left, sum) + traverseTree(root.right, sum);
         }
-
-        traverseTree(root.left,stringBuilder,res);
-
-        traverseTree(root.right,stringBuilder,res);
-
-        stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
+      class Solution2 {
+          public int sumNumbers(TreeNode root) {
+              List<Integer> res = new ArrayList<>();
+              traverseTree(root, new StringBuilder(),res);
+              int sum = 0;
+              for (Integer num : res) {
+                  sum += num;
+              }
+              return sum;
+          }
+
+          private void traverseTree(TreeNode root, StringBuilder stringBuilder, List<Integer> res) {
+              if (root == null) {
+                  return;
+              }
+
+              stringBuilder.append(root.val);
+
+              //到达叶子节点了就计算路径
+              if (root.left == null && root.right ==null) {
+                  res.add(Integer.valueOf(stringBuilder.toString()));
+                  stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+                  return;
+              }
+
+              traverseTree(root.left,stringBuilder,res);
+
+              traverseTree(root.right,stringBuilder,res);
+
+              stringBuilder.deleteCharAt(stringBuilder.length() - 1);
+
+          }
+      }
 }
