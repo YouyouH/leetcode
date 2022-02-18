@@ -42,7 +42,10 @@ package com.yy.leetcodeplugin.temp.leetcode.editor.cn;
 //2022-02-12 14:09:14 
 //向下的路径节点之和
 
-public class SixEUYwP{
+  import java.util.HashMap;
+  import java.util.Map;
+
+  public class SixEUYwP{
     public static void main(String[] args) {
          Solution solution = new SixEUYwP().new Solution();
     }
@@ -63,11 +66,78 @@ public class SixEUYwP{
  * }
  */
 class Solution {
+    private int res = 0;
+    private int target = 0;
     public int pathSum(TreeNode root, int targetSum) {
         //方法一：递归找每一个node，再对每一个node递归，判断是否有路径满足条件。双重递归
         //方法二：递归遍历树 + 前缀和
+
+        //方法二：
+        Map<Integer, Integer> preSum = new HashMap<>();//val to
+        preSum.put(0, 1);
+        target = targetSum;
+        traverseTree(root,0, preSum);
+
+        return res;
+
+    }
+
+    private void traverseTree(TreeNode root, int sum, Map<Integer, Integer> preSum) {
+        if (root == null) {
+            return;
+        }
+
+        //通过前缀和计算有没有满足条件的. 注意要先计算，在更新前缀和
+        res += preSum.getOrDefault(root.val + sum - target, 0);
+
+
+        preSum.put(root.val + sum, preSum.getOrDefault(root.val + sum, 0) + 1);
+
+        traverseTree(root.left, root.val + sum, preSum);
+        traverseTree(root.right, root.val + sum, preSum);
+
+        preSum.put(root.val + sum, preSum.getOrDefault(root.val + sum, 0) - 1);
+
+    }
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
+    class Solution2 {
+        private int res = 0;
+        public int pathSum(TreeNode root, int targetSum) {
+            //方法一：递归找每一个node，再对每一个node递归，判断是否有路径满足条件。双重递归
+            //方法二：递归遍历树 + 前缀和
+
+            //方法一
+            traverseTree(root, targetSum);
+            return res;
+        }
+
+        private void traverseTree(TreeNode root, int targetSum) {
+            //先遍历每一个节点
+            if (root == null) {
+                return;
+            }
+            //对每一个节点再次深度遍历
+            dfs2(root, root.val,targetSum);
+            traverseTree(root.left, targetSum);
+            traverseTree(root.right, targetSum);
+        }
+
+        private void dfs2(TreeNode root, int sum, int targetSum) {
+
+            if (sum == targetSum) {
+                res++;
+            }
+            if (root.left != null) {
+                dfs2(root.left, sum + root.left.val, targetSum);
+            }
+
+            if (root.right != null) {
+                dfs2(root.right, sum + root.right.val, targetSum);
+            }
+
+        }
 }
