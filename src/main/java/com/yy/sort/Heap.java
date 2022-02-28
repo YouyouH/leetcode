@@ -25,14 +25,14 @@ public class Heap {
     public void push(int value) {
         arr[heapSize++] = value;
         //一个新元素push进去，就先放到最后面，然后不停上浮
-        adjustUp((heapSize - 2) / 2);
+        shiftUp((heapSize - 2) / 2);
     }
 
 
     public void poll() {
         swap(0, heapSize - 1);
         heapSize--;
-        adjustDown(0);
+        shiftDown(0);
     }
 
     // 构建一个最大堆的过程：就是从后往前
@@ -44,12 +44,12 @@ public class Heap {
         // 找到非叶子节点，然后向下调整;
 //        最后一个非叶子节点是（heapSize - 2）/2;
         for (int i = (arr.length - 2) / 2; i >= 0; i--) {
-            adjustDown(i);
+            shiftDown(i);
         }
     }
 
     // 向下调整算法
-    public void adjustDown(int k) {
+    public void shiftDown(int k) {
         // 非叶子节点，不用向下调整。
         // 判断叶子节点：(堆大小是1 或 就一般的最后一个节点的父节点之后的节点都是叶子)
         if (heapSize == 1 || k > (heapSize - 2) / 2)
@@ -61,13 +61,13 @@ public class Heap {
 
         if (arr[largest] > arr[k]) {
             swap(largest, k);
-            adjustDown(largest);
+            shiftDown(largest);
         }
 
     }
 
     // 向上调整算法
-    public void adjustUp(int k) {
+    public void shiftUp(int k) {
         if (k < 0)
             return;
         int left = 2 * k + 1, right = 2 * k + 2, largest = left;
@@ -78,7 +78,7 @@ public class Heap {
         if (arr[largest] > arr[k]) {
             swap(largest, k);
             //其中针对于k节点，其父节点是 (k-1)/2 (注意： 0节点除外)
-            adjustUp((k - 1) / 2);
+            shiftUp((k - 1) / 2);
         }
     }
 
