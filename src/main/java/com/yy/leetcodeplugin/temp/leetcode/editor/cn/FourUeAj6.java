@@ -93,63 +93,105 @@ class Node {
 class Solution {
     public Node insert(Node head, int insertVal) {
         //方法一：遍历一遍,treemap找到左右边界节点。速度很快但空间占用大
-        //单调非递减，说明可以相等
-        Node newNode = new Node(insertVal);
+
+        //方法二：
+        /*
+         *只用处理两种情况
+         * 1，链表交接处。即递减处
+         * 2.其他地方，即单调非递减
+         */
+
         if (head == null) {
-            newNode.next = newNode;
-            return newNode;
+            Node node = new Node(insertVal);
+            node.next = node;
+            return node;
         }
-        TreeMap<Integer, List<Node>> navi = new TreeMap<>();
-        Node p = head.next;
+        Node p = head;
 
-        addNode(head, navi);
+        while (p.next != head) {
+            //链表交界处，即递减处
+            if (p.val > p.next.val) {
+                if (insertVal >= p.val) {
+                    //[3,5,1] 6
+//                    p.next = new Node(insertVal, p.next);
+                    break;
+                } else if (insertVal <= p.next.val) {
+                    //[3,5,1] 0
+//                    p.next = new Node(insertVal, p.next);
+                    break;
+                }
+            }
 
-        while (p != head) {
-            addNode(p,navi);
+            //[3,5,1] 4 处在链表中间
+            if (insertVal >= p.val && insertVal <= p.next.val) {
+//                p.next = new Node(insertVal, p.next);
+                break;
+            }
+
             p = p.next;
         }
-        //小于等于insertVal
-        Integer floorKey = navi.floorKey(insertVal);
-        System.out.println("floor: " + floorKey);
-        //大于等于insertVal
-        Integer ceilingKey = navi.ceilingKey(insertVal);
-        System.out.println("ceilingKey: " + ceilingKey);
-
-        //处在第一个或者最后一个
-        if (floorKey == null || ceilingKey == null) {
-            //直接找最后一个节点（一样大小就找最后一个点）
-            Node maxNode = navi.lastEntry().getValue().get(navi.lastEntry().getValue().size() - 1);
-
-            newNode.next = maxNode.next;
-            maxNode.next = newNode;
-            return head;
-        }
-
-
-        if (Objects.equals(floorKey, ceilingKey)) {
-            newNode.next = navi.get(floorKey).get(0).next;
-            navi.get(floorKey).get(0).next = newNode;
-        } else {
-            if (navi.containsKey(ceilingKey)) {
-                newNode.next = navi.get(ceilingKey).get(0);
-            }
-            if (navi.containsKey(floorKey)) {
-                navi.get(floorKey).get(navi.get(floorKey).size()-1).next = newNode;
-            }
-        }
-
+        p.next = new Node(insertVal, p.next);
         return head;
-    }
 
-    private void addNode(Node node, TreeMap<Integer, List<Node>> navi) {
-        if (navi.containsKey(node.val)) {
-            navi.get(node.val).add(node);
-        }else{
-            ArrayList<Node> list = new ArrayList<>();
-            list.add(node);
-            navi.put(node.val, list);
-        }
     }
+//        //方法一：遍历一遍,treemap找到左右边界节点。速度很快但空间占用大
+//        //单调非递减，说明可以相等
+//        Node newNode = new Node(insertVal);
+//        if (head == null) {
+//            newNode.next = newNode;
+//            return newNode;
+//        }
+//        TreeMap<Integer, List<Node>> navi = new TreeMap<>();
+//        Node p = head.next;
+//
+//        addNode(head, navi);
+//
+//        while (p != head) {
+//            addNode(p,navi);
+//            p = p.next;
+//        }
+//        //小于等于insertVal
+//        Integer floorKey = navi.floorKey(insertVal);
+//        System.out.println("floor: " + floorKey);
+//        //大于等于insertVal
+//        Integer ceilingKey = navi.ceilingKey(insertVal);
+//        System.out.println("ceilingKey: " + ceilingKey);
+//
+//        //处在第一个或者最后一个
+//        if (floorKey == null || ceilingKey == null) {
+//            //直接找最后一个节点（一样大小就找最后一个点）
+//            Node maxNode = navi.lastEntry().getValue().get(navi.lastEntry().getValue().size() - 1);
+//
+//            newNode.next = maxNode.next;
+//            maxNode.next = newNode;
+//            return head;
+//        }
+//
+//
+//        if (Objects.equals(floorKey, ceilingKey)) {
+//            newNode.next = navi.get(floorKey).get(0).next;
+//            navi.get(floorKey).get(0).next = newNode;
+//        } else {
+//            if (navi.containsKey(ceilingKey)) {
+//                newNode.next = navi.get(ceilingKey).get(0);
+//            }
+//            if (navi.containsKey(floorKey)) {
+//                navi.get(floorKey).get(navi.get(floorKey).size()-1).next = newNode;
+//            }
+//        }
+//
+//        return head;
+//    }
+//
+//    private void addNode(Node node, TreeMap<Integer, List<Node>> navi) {
+//        if (navi.containsKey(node.val)) {
+//            navi.get(node.val).add(node);
+//        }else{
+//            ArrayList<Node> list = new ArrayList<>();
+//            list.add(node);
+//            navi.put(node.val, list);
+//        }
+//    }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
