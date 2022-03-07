@@ -118,6 +118,7 @@ class Solution {
                 }
                 right++;
             }
+            //右边都超出边界了，说明没有符合的子串了，此时再缩小左边界也没用了。
             if (right == s.length()) {
                 return resString;
             }
