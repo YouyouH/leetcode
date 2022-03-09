@@ -69,9 +69,9 @@ class MyCalendar {
         //理解floorkey和ceilingkey这两个API:即以传的参数为floor
         public boolean book(int start, int end) {
             //小于等于。 不超过待加入的start的最大值，即在start开始前已经存在的会议
-            Integer pre = sortedMap.floorKey(start);
+            Integer pre = sortedMap.floorKey(start);//怎么理解floor:floor当成动词，向下
             //大于等于。 大于等于待加入的start的最小值，即在start开始后的下一个会议。
-            Integer next = sortedMap.ceilingKey(start);
+            Integer next = sortedMap.ceilingKey(start);//ceil:ceil当成动词，向上
 
             if ((pre == null || start >= sortedMap.get(pre)) && (next == null || end <= next)) {
                 //start大于上一个会议的结束时间，end小于下一个会议的开始时间
