@@ -12,7 +12,7 @@ Approach
 
 ```
 如果条件是两个string,则i,j表示长度为 i 的子串和长度为 j 的子串。
-dp[i][j] 表示结果
+dp[i][j] 表示结果,即以string1[i-1] 和 string2[j-1] 结尾的字串.i和j是长度，换算成index是i-1和j-1。这样方便处理i和j为1的情况。
 
 // i - indexing string s1
 // j - indexing string s2
