@@ -67,12 +67,60 @@ public class GaM7Ch{
          Solution solution = new GaM7Ch().new Solution();
     }
     //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+
+    class Solution {
+
+        public int coinChange(int[] coins, int amount) {
+            if(coins.length == 0){
+                return -1;
+            }
+            int[] mem = new int[amount];
+
+            return traverse(coins, amount,mem);
+        }
+
+        private int traverse(int[] coins, int amount, int[] mem) {
+
+
+            if (amount < 0) {
+                return -1;
+            }
+
+            if (amount == 0) {
+                return 0;
+            }
+
+            if(mem[amount-1] != 0){
+                return mem[amount-1];
+            }
+
+            int min = Integer.MAX_VALUE;
+
+            for (int coin : coins) {
+                int res = traverse(coins, amount - coin, mem);
+                if (res >= 0 && res < min) {
+                    min = res + 1;//为什么+1？ 因为当前这个要加上
+                }
+
+            }
+
+            mem[amount-1] = (min == Integer.MAX_VALUE ? -1 : min);
+            return mem[amount-1];
+
+        }
+
+    }
+
+
+    /**
+     * 暴力法：超时了
+     */
+    class Solution1 {
 
         int res = Integer.MAX_VALUE;
 
         public int coinChange(int[] coins, int amount) {
-            //无法转换为完全背包问题，不是求方案数，是求方案最少硬币个数。
+
             //先用回溯法全部遍历一遍
 
             traverse(coins, amount,0);
