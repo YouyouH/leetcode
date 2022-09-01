@@ -94,6 +94,7 @@ public class YaVDxD{
             for (int i = 1; i <= nums.length; ++i) {
                 for (int j = 0; j <= minus;++j) {
                     if (j - nums[i - 1] >= 0) {
+                        //选择i  +  不选择i 的方案数量
                         dp[i][j] = dp[i - 1][j] + dp[i - 1][j - nums[i - 1]];
                     } else {
                         dp[i][j] = dp[i - 1][j];
