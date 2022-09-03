@@ -76,6 +76,10 @@ public class GaM7Ch{
             }
             int[] mem = new int[amount];
 
+            //为什么可以记忆化搜索？
+            //因为有很多重复计算，例如假如硬币是1，2，3，4，总额是10
+            //那么 排列121和112，剩余的都是6.所以6的结果可以缓存下来。
+
             return traverse(coins, amount,mem);
         }
 
