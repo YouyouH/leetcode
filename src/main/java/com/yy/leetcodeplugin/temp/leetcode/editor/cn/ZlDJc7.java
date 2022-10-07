@@ -108,7 +108,7 @@ package com.yy.leetcodeplugin.temp.leetcode.editor.cn;
                 if (deadMap.contains(number)) {
                     continue;
                 }
-                for (String candidate : calculateCandidates(number)) {
+                for (String candidate : get(number)) {
                     if (deadMap.contains(candidate) || visited.contains(candidate)) {
                         continue;
                     }
@@ -146,6 +146,29 @@ package com.yy.leetcodeplugin.temp.leetcode.editor.cn;
 
             }
             return result;
+        }
+
+        public char numPrev(char x) {
+            return x == '0' ? '9' : (char) (x - 1);
+        }
+
+        public char numSucc(char x) {
+            return x == '9' ? '0' : (char) (x + 1);
+        }
+
+        // 枚举 status 通过一次旋转得到的数字
+        public List<String> get(String status) {
+            List<String> ret = new ArrayList<String>();
+            char[] array = status.toCharArray();
+            for (int i = 0; i < 4; ++i) {
+                char num = array[i];
+                array[i] = numPrev(num);
+                ret.add(new String(array));
+                array[i] = numSucc(num);
+                ret.add(new String(array));
+                array[i] = num;
+            }
+            return ret;
         }
     }
 //leetcode submit region end(Prohibit modification and deletion)
