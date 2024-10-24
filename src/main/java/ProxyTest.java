@@ -14,6 +14,14 @@ public class ProxyTest {
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println(System.getProperty("jdk.http.auth.tunneling.disabledSchemes"));
+        System.setProperty("http.auth.preference", "NTLM");
+        System.setProperty("java.util.logging.config.file", "C:\\UCMDB\\UCMDBServer\\logging.properties");
+
+// logging.properties:--------------------------
+// handlers= java.util.logging.ConsoleHandler
+// java.util.logging.ConsoleHandler.level = FINEST
+// sun.net.www.protocol.http.HttpURLConnection.level=ALL
+
 //        https://stackoverflow.com/questions/1626549/authenticated-http-proxy-with-java
 //        -Dhttp.proxyHost=myproxy
 //        -Dhttp.proxyPort=myport
@@ -41,8 +49,8 @@ public class ProxyTest {
 
         String proxyHost = "10.164.82.107";
         String proxyPort = "8081";
-        String proxyUser = "youyou";
-        String proxyPassword = "683991";
+        String proxyUser = "youyouadmin";
+        String proxyPassword = "Hyy_683991";
 
         //access http resources
         System.setProperty("http.proxyHost", proxyHost);
@@ -57,13 +65,13 @@ public class ProxyTest {
         System.setProperty("https.proxyPassword", proxyPassword);
 
 
-        Authenticator.setDefault(
-                new Authenticator() {
-                    public PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(proxyUser, proxyPassword.toCharArray());
-                    }
-                }
-        );
+//        Authenticator.setDefault(
+//                new Authenticator() {
+//                    public PasswordAuthentication getPasswordAuthentication() {
+//                        return new PasswordAuthentication(proxyUser, proxyPassword.toCharArray());
+//                    }
+//                }
+//        );
 
         String encoded = Base64.getEncoder().encodeToString((proxyUser + ":" + proxyPassword).getBytes());
 
