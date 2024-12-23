@@ -15,7 +15,7 @@ public class ProxyTest {
     public static void main(String[] args) throws InterruptedException {
         System.out.println(System.getProperty("jdk.http.auth.tunneling.disabledSchemes"));
         System.setProperty("http.auth.preference", "NTLM");
-        System.setProperty("java.util.logging.config.file", "C:\\UCMDB\\UCMDBServer\\logging.properties");
+        System.setProperty("java.util.logging.config.file", "E:\\UCMDB\\logging.properties");
 
 // logging.properties:--------------------------
 // handlers= java.util.logging.ConsoleHandler
