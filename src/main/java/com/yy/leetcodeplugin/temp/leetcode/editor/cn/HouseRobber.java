@@ -18,6 +18,9 @@ class Solution {
          *
          * dp[0] = 0   dp[1] = nums[0]
          *
+         * FIXME： 相邻的房子都不能偷，为什么只考虑前面的不考虑后面的？
+         *         已经考虑了， dp[n] = max(dp[n-2] + nums[n-1], dp[n-1])  dp[n-1]就表示了后面的不能偷
+         *
          **/
         if (1 == nums.length) {
             return nums[0];
