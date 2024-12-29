@@ -212,6 +212,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/MaximumTotalDamageWithSpellCasting.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/MaximumTotalDamageWithSpellCasting.md" />
+              <option name="frontendQuestionId" value="leetcode.cn3186" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/MaximumTotalDamageWithSpellCasting.java" />
+              <option name="titleSlug" value="maximum-total-damage-with-spell-casting" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/MinCostClimbingStairs.java">
           <value>
             <LeetcodeEditor>
