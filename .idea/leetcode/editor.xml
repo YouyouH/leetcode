@@ -223,6 +223,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/MaximumAbsoluteSumOfAnySubarray.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/MaximumAbsoluteSumOfAnySubarray.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1749" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/MaximumAbsoluteSumOfAnySubarray.java" />
+              <option name="titleSlug" value="maximum-absolute-sum-of-any-subarray" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/MaximumSubarray.java">
           <value>
             <LeetcodeEditor>
