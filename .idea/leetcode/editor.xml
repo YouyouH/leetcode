@@ -344,6 +344,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/NumberOfPathsWithMaxScore.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/NumberOfPathsWithMaxScore.md" />
+              <option name="frontendQuestionId" value="leetcode.cn1301" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/NumberOfPathsWithMaxScore.java" />
+              <option name="titleSlug" value="number-of-paths-with-max-score" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/OmKAoA.java">
           <value>
             <LeetcodeEditor>
