@@ -25,6 +25,17 @@
             </LeetcodeEditor>
           </value>
         </entry>
+        <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/CheckIfThereIsAValidParenthesesStringPath.java">
+          <value>
+            <LeetcodeEditor>
+              <option name="contentPath" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/doc/content/CheckIfThereIsAValidParenthesesStringPath.md" />
+              <option name="frontendQuestionId" value="leetcode.cn2267" />
+              <option name="host" value="leetcode.cn" />
+              <option name="path" value="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/CheckIfThereIsAValidParenthesesStringPath.java" />
+              <option name="titleSlug" value="check-if-there-is-a-valid-parentheses-string-path" />
+            </LeetcodeEditor>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$/src/main/java/com/yy/leetcodeplugin/temp/leetcode/editor/cn/ClimbingStairs.java">
           <value>
             <LeetcodeEditor>

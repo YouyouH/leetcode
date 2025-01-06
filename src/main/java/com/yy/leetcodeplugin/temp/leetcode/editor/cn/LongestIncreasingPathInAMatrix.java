@@ -32,10 +32,13 @@ class Solution {
 
 
     private int dfs(int[][] matrix, int i, int j, int[][] memo) {
+        /**
+         * 不需要这个判断，下面已经判断确保不超出边界
+         */
         //不能超出边界
-        if (i < 0 || i >= matrix.length || j < 0 || j >= matrix[0].length) {
-            return 0;
-        }
+//        if (i < 0 || i >= matrix.length || j < 0 || j >= matrix[0].length) {
+//            return 0;
+//        }
 
         if (memo[i][j] != 0) {
             return memo[i][j];
