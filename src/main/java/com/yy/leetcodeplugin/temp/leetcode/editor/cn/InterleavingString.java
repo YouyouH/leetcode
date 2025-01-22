@@ -52,7 +52,7 @@ class Solution {
                     dp[i][j] = dp[i - 1][j];
                 }
                 if (c2 == c3) {
-                    dp[i][j] = dp[i][j] || dp[i][j-1]; //FIXME 这里要注意dp[i][j]在上面是true
+                    dp[i][j] = dp[i][j] || dp[i][j-1]; //FIXME 这里要注意dp[i][j]在上面可能是true所以要用 ||
                 }
                 //其他情况是false
             }
