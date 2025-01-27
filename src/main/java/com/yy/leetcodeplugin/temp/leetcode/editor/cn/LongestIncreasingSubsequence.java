@@ -15,6 +15,7 @@ class Solution {
         /**
          * FIXME dp[i]表示以数字nums[i]结尾的子序列的最大长度
          *      dp[i+1] 等于 dp[0..i]中最大值 +1
+         *      注意，根据定义，dp[i]并不是所有子序列中的最大值，只是以第i个数字结尾的子序列的最大值
          */
         int length = nums.length;
         int[] dp = new int[length];
