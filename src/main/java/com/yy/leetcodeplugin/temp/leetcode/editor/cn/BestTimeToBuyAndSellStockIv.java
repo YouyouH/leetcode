@@ -17,25 +17,30 @@ class Solution {
          *  dp[i][k][2] //表示前i天 最多 交易k次，在持有或者不持有的情况下的最大利润
          */
         int length = prices.length;
-        int[][][] dp = new int[length][k + 1][2];
+        int[][] dp = new int[k + 1][2];
 
         //初始化
         for (int i = 0; i < k + 1; i++) {
             //第一天持有
-            dp[0][i][0] = -prices[0];
+            dp[i][0] = -prices[0];
             //第一天不持有
-            dp[0][i][1] = 0;
+            dp[i][1] = 0;
         }
 
+        /**
+         * 下面注释掉的状态转移方程是压缩了一维，因为i只和i-1有关，可以利用滚动数组的方式压缩掉
+         */
         for (int i = 1; i < length; i++) {
             for (int j = 1; j < k + 1; j++) {
                 //当前持有      前一天也持有,没有交易   前一天不持有，今天买入，新增交易
-                dp[i][j][0] = Math.max(dp[i - 1][j][0], dp[i - 1][j - 1][1] - prices[i]);
+//                dp[i][j][0] = Math.max(dp[i - 1][j][0], dp[i - 1][j - 1][1] - prices[i]);
+                dp[j][0] = Math.max(dp[j][0], dp[j - 1][1] - prices[i]);
                 //当前不持有    前一天也不持有，没有交易   前一天持有，今天卖出，没有新的交易（买入卖出才是新的交易）
-                dp[i][j][1] = Math.max(dp[i - 1][j][1], dp[i - 1][j][0] + prices[i]);
+//                dp[i][j][1] = Math.max(dp[i - 1][j][1], dp[i - 1][j][0] + prices[i]);
+                dp[j][1] = Math.max(dp[j][1], dp[j][0] + prices[i]);
             }
         }
-        return dp[length-1][k][1];
+        return dp[k][1];
 
     }
 }
