@@ -26,7 +26,7 @@ class Solution {
         for (int i = 0; i < length; i++) {
             dp[i] = 1;
             for (int j = 0; j < i; j++) {
-                if (nums[i] > nums[j]) {
+                if (nums[i] > nums[j]) {//注意这里，j的起始值是等于i的，但是同意判断nums[i] > nums[j] 可以跳过j=i
                     dp[i] = Math.max(dp[i], dp[j] + 1);
                 } else {
                     //跳过
