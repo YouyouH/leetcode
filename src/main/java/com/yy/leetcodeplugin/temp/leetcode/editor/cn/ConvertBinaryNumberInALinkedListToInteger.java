@@ -46,11 +46,21 @@ class Solution {
 
 }
  class ListNode {
-    int val;
-    ListNode next;
-    ListNode() {}
-    ListNode(int val) { this.val = val; }
-    ListNode(int val, ListNode next) { this.val = val; this.next = next; }
+     int val;
+     ListNode next;
+
+     ListNode() {
+     }
+
+     ListNode(int val) {
+         this.val = val;
+     }
+
+     ListNode(int val, ListNode next) {
+         this.val = val;
+         this.next = next;
+     }
+ }
 
   //给你一个单链表的引用结点 head。链表中每个结点的值不是 0 就是 1。已知此链表是一个整数数字的二进制表示形式。 
 //
