@@ -67,11 +67,11 @@ class Solution {
             res = new ArrayList<>();
             while (size-- > 0) {
                 Integer point = deque.poll();
-                res.add(point);
+                res.add(point);//把当前层的点加进去。（每次都把当前层的加进去，最后剩下一的一层就是答案）
                 List<Integer> nodes = map.get(point);
                 for (Integer node : nodes) {
                     points[node]--;
-                    if (points[node] == 1) {
+                    if (points[node] == 1) {//继续添加最外层的节点
                         deque.add(node);
                     }
                 }
