@@ -5,9 +5,12 @@ package com.yy.leetcodeplugin.temp.leetcode.editor.cn;
 //2025-02-26 21:23:01 
 //最小高度树
 
+import java.util.*;
+
 public class MinimumHeightTrees{
     public static void main(String[] args) {
          Solution solution = new MinimumHeightTrees().new Solution();
+         solution.findMinHeightTrees(4, new int[][]{{1,0},{1,2},{1,3}});
     }
         //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
@@ -26,7 +29,59 @@ class Solution {
          *          2.遍历队列找到他们关联的点，并且每个点的出度减一
          *          3.剩下的点中，出度为1的点再找出来然后处理
          */
-        
+        if (n == 1) {
+            ArrayList<Integer> list = new ArrayList<>();
+            list.add(0);
+            return list;
+        }
+
+        int[] points = new int[n];
+        Map<Integer, List<Integer>> map = new HashMap<>();
+
+        for (int[] edge : edges) {
+            //求每个点的出度。出度为一的就是最外圈的节点
+            points[edge[0]]++;
+            points[edge[1]]++;
+            //求每个点连接的节点
+            List<Integer> list = map.getOrDefault(edge[0], new ArrayList<>());
+            list.add(edge[1]);
+            map.put(edge[0], list);
+            List<Integer> list2 = map.getOrDefault(edge[1], new ArrayList<>());
+            list2.add(edge[0]);
+            map.put(edge[1], list2);
+        }
+
+        Deque<Integer> deque = new LinkedList<>();
+
+
+        //先把出度为1的加进去
+        for (int i = 0; i < n; i++) {
+            if (points[i] == 1) {
+                deque.offer(i);
+            }
+        }
+
+        List<Integer> res = new ArrayList<>();
+        while (!deque.isEmpty()) {
+            int size = deque.size();
+            res = new ArrayList<>();
+            while (size-- > 0) {
+                Integer point = deque.poll();
+                res.add(point);
+                List<Integer> nodes = map.get(point);
+                for (Integer node : nodes) {
+                    points[node]--;
+                    if (points[node] == 1) {
+                        deque.add(node);
+                    }
+                }
+
+            }
+
+        }
+
+        return res;
+
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
