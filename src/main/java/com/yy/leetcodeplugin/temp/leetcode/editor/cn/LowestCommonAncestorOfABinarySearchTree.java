@@ -5,6 +5,10 @@ package com.yy.leetcodeplugin.temp.leetcode.editor.cn;
 //2025-02-23 22:15:38 
 //二叉搜索树的最近公共祖先
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class LowestCommonAncestorOfABinarySearchTree{
     public static void main(String[] args) {
          Solution solution = new LowestCommonAncestorOfABinarySearchTree().new Solution();
@@ -21,6 +25,8 @@ public class LowestCommonAncestorOfABinarySearchTree{
  */
 
 class Solution {
+    List<TreeNode> parentsp = new ArrayList<>();
+    List<TreeNode> parentsq = new ArrayList<>();
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
         /**
          * 分别递归两次把到达两个点的路径记下来，然后再比较这两个路径找出最近公共祖先
@@ -28,7 +34,59 @@ class Solution {
          *  怎么找分叉点？
          *      从头开始找，遇到不一样的就说明分叉了不是公共点了
          */
-        
+        List<TreeNode> parents = new ArrayList<>();
+        parents.add(root);
+        traverse(root, p, q, parents);
+        TreeNode node = null;
+        for (int i = 0; i < Math.min(parentsp.size(), parentsq.size()); i++) {
+            TreeNode p1 = parentsp.get(i);
+            TreeNode q1 = parentsq.get(i);
+            if (p1 == q1) {
+                node = p1;
+            }else{
+                return node;
+            }
+        }
+        return node;
+    }
+
+    private void traverse(TreeNode root, TreeNode p, TreeNode q, List<TreeNode> parents) {
+        if (root == null) {
+            return;
+        }
+        if (root == p) {
+            parentsp.addAll(new ArrayList<>(parents));
+//            StringBuilder sb = new StringBuilder();
+//            for (TreeNode node : parentsp) {
+//                sb.append(node.val);
+//            }
+//            System.out.println("found p:" + sb);
+        }
+        if (root == q) {
+            parentsq.addAll(new ArrayList<>(parents));
+//            StringBuilder sb = new StringBuilder();
+//            for (TreeNode node : parentsq) {
+//                sb.append(node.val);
+//            }
+//            System.out.println("found q:" + sb);
+        }
+        if (!parentsp.isEmpty() && !parentsq.isEmpty()) {
+            return;
+        }
+        if (root.left != null) {
+            parents.add(root.left);
+        }
+        traverse(root.left, p, q, parents);
+        if (root.left != null) {
+            parents.remove(parents.size()-1);
+        }
+        if (root.right != null) {
+            parents.add(root.right);
+        }
+        traverse(root.right, p, q, parents);
+        if (root.right != null) {
+            parents.remove(parents.size()-1);
+        }
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
