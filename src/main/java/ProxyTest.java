@@ -14,8 +14,9 @@ public class ProxyTest {
 
     public static void main(String[] args) throws InterruptedException {
         System.out.println(System.getProperty("jdk.http.auth.tunneling.disabledSchemes"));
-        System.setProperty("http.auth.preference", "NTLM");
-        System.setProperty("java.util.logging.config.file", "E:\\UCMDB\\logging.properties");
+        System.setProperty("jdk.http.auth.tunneling.disabledSchemes", "");
+        System.setProperty("http.auth.preference", "Basic");
+        System.setProperty("java.util.logging.config.file", "C:\\Users\\Administrator\\Downloads\\basicauthlogging.txt");
 
 // logging.properties:--------------------------
 // handlers= java.util.logging.ConsoleHandler
@@ -40,17 +41,17 @@ public class ProxyTest {
         disableCertificateValidation();
 
 
-        String url = "https://google.com";
+        String url = "https://cifarm-sac.swinfra.net/";
 
 //        String proxyHost = "web-proxy.sg.softwaregrp.net";
 //        String proxyPort = "8080";
 //        String proxyUser = "usera";
 //        String proxyPassword = "passa";
 
-        String proxyHost = "10.164.82.107";
+        String proxyHost = "10.67.45.143";
         String proxyPort = "8081";
-        String proxyUser = "youyouadmin";
-        String proxyPassword = "Hyy_683991";
+        String proxyUser = "youyou";
+        String proxyPassword = "683991";
 
         //access http resources
         System.setProperty("http.proxyHost", proxyHost);
@@ -65,13 +66,14 @@ public class ProxyTest {
         System.setProperty("https.proxyPassword", proxyPassword);
 
 
-//        Authenticator.setDefault(
-//                new Authenticator() {
-//                    public PasswordAuthentication getPasswordAuthentication() {
-//                        return new PasswordAuthentication(proxyUser, proxyPassword.toCharArray());
-//                    }
-//                }
-//        );
+        //现在（java17）好像必须要注册这个？
+        Authenticator.setDefault(
+                new Authenticator() {
+                    public PasswordAuthentication getPasswordAuthentication() {
+                        return new PasswordAuthentication(proxyUser, proxyPassword.toCharArray());
+                    }
+                }
+        );
 
         String encoded = Base64.getEncoder().encodeToString((proxyUser + ":" + proxyPassword).getBytes());
 
