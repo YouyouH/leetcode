@@ -5,6 +5,9 @@ package com.yy.leetcodeplugin.temp.leetcode.editor.cn;
 //2025-03-09 21:44:56 
 //最小覆盖子串
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class MinimumWindowSubstring{
     public static void main(String[] args) {
          Solution solution = new MinimumWindowSubstring().new Solution();
@@ -16,7 +19,46 @@ class Solution {
          * 滑动窗口。
          *      怎么统计是否覆盖了？用两个数组
          */
-        
+
+        Map<Character, Integer> charMap = new HashMap<>();
+        for (int i = 0; i < t.length(); i++) {
+            charMap.put(t.charAt(i), charMap.getOrDefault(t.charAt(i), 0) + 1);
+        }
+
+        String res = "";
+
+        int l = 0;
+        int r = 0;
+
+        Map<Character, Integer> map = new HashMap<>();
+        while (r < s.length()) {
+            //先填充窗口，右边界扩张
+            map.put(s.charAt(r), map.getOrDefault(s.charAt(r), 0) + 1);
+            while ((r - l + 1) >= t.length() && window(map,charMap)) {
+                if (res.isEmpty()) {
+                    res = s.substring(l, r + 1);
+                } else {
+                    if (r - l + 1 < res.length()) {
+                        res = s.substring(l, r + 1);
+                    }
+                }
+                //左边界收缩
+                map.put(s.charAt(l), map.get(s.charAt(l)) - 1);
+                l++;
+            }
+            r++;
+        }
+        return res;
+    }
+
+    private boolean window(Map<Character, Integer> map, Map<Character, Integer> charMap) {
+        for (Map.Entry<Character, Integer> entry : charMap.entrySet()) {
+            Character key = entry.getKey();
+            if (!map.containsKey(key) || map.get(key) < (entry.getValue())) {
+                return false;
+            }
+        }
+        return true;
     }
 }
 //leetcode submit region end(Prohibit modification and deletion)
