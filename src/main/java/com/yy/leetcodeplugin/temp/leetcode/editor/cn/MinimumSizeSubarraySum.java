@@ -16,7 +16,29 @@ class Solution {
          * 滑动窗口
          *      扩张到大于等于target然后再开始缩小直到小于target
          */
+        int l = 0; int r = 0;
+        int length = nums.length;
+        int res = Integer.MAX_VALUE;
+        int sum = nums[0];
+        while (l <= r && r < length) {
+            while (sum < target) {
+                r++;
+                if (r >= length) {
+                    break;
+                }
+                sum += nums[r];
+
+            }
+            while (sum >= target) {
+//                System.out.println("l=" + l + " r=" + r + " sum=" + sum);
+                res = Math.min(res, r - l+1);
+                sum -= nums[l];
+                l++;
+            }
+        }
+        return res == Integer.MAX_VALUE ? 0 : res;
     }
+
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
