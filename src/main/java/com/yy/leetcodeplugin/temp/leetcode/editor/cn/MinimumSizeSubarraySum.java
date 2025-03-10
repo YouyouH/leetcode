@@ -19,22 +19,20 @@ class Solution {
         int l = 0; int r = 0;
         int length = nums.length;
         int res = Integer.MAX_VALUE;
-        int sum = nums[0];
-        while (l <= r && r < length) {
-            while (sum < target) {
-                r++;
-                if (r >= length) {
-                    break;
-                }
-                sum += nums[r];
-
-            }
+        int sum = 0;
+        //FIXME: 下面这段逻辑是看答案的，比自己写的简洁。
+        // 先扩张，如果满足条件了就收缩，直到不满足条件
+        while (r < length) {
+            sum += nums[r];
             while (sum >= target) {
-//                System.out.println("l=" + l + " r=" + r + " sum=" + sum);
-                res = Math.min(res, r - l+1);
+                res = Math.min(res, r - l + 1);
+                if (res == 1) {//最小值肯定是1，否则就不存在
+                    return 1;
+                }
                 sum -= nums[l];
                 l++;
             }
+            r++;
         }
         return res == Integer.MAX_VALUE ? 0 : res;
     }
