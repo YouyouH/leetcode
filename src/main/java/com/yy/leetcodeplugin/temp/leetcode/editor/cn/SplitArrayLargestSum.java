@@ -12,7 +12,48 @@ public class SplitArrayLargestSum{
          Solution solution = new SplitArrayLargestSum().new Solution();
     }
         //leetcode submit region begin(Prohibit modification and deletion)
-class Solution {
+        class Solution {
+            //Solution2: 二分法
+            public int splitArray(int[] nums, int k) {
+                /**
+                 * 二分法求最大值。
+                 *  怎么检查最大值是否能分成k个连续子数组？对子数组求和，每次达到最大值子数组个数加一。
+                 *  FIXME: 最大值越小，划分的数组就会越多。
+                 */
+                int l = Arrays.stream(nums).max().getAsInt();//FIXME:为什么是最大值？因为是非空数组，所以最大的那个数至少是一个独立的数组
+                int r = Arrays.stream(nums).sum();
+                int ans = 0;
+                while (l <= r) {
+                    int mid = l + (r - l) / 2;
+                    //FIXME: 为什么是小于等于k? 如果能分成k-1个子数组，那也可以随便拆分一个子数组再多分出一个数组，得到k个子数组
+                    //  这里的含义是在所有子数组的和都小于mid的情况下可以分出来K个子数组。那么我们还可以继续缩小mid，缩小右边界r
+                    if (check(mid, nums) <= k) {
+                        ans = mid;
+                        r = mid - 1;
+                    }else{
+                        l = mid + 1;
+                    }
+                }
+                return ans;
+            }
+
+            private int check(int target, int[] nums) {
+                int sum = 0;
+                int count = 1;//刚开始是一整段，划分一次就是两段。
+                for (int num : nums) {
+                    if (sum + num > target) {
+                        count++;
+                        sum = num;//在不超过target的情况下子数组的和尽可能的大
+                    }else {
+                        sum += num;
+                    }
+                }
+//                System.out.println("target=" + target + " count=" + count);
+                return count;
+            }
+
+        }
+    class Solution2 {
         //FIXME 抄的
             public int splitArray(int[] nums, int k) {
                 /**
