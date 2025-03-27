@@ -16,6 +16,7 @@ class Solution {
             public int maxPossibleScore(int[] start, int d) {
                 /**
                  * 二分法找最大得分
+                 *  FIXME: 要对数组排序才可以转化成比较相邻的两个数
                  */
                 Arrays.sort(start);
                 long l = 0; //差的绝对值最小为0
