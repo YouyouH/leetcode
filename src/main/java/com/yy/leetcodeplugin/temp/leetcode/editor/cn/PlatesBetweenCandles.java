@@ -16,6 +16,7 @@ class Solution {
          * Fixme 对于每个区间，找到左右两边的第一个盘子
          * 累计盘子数量但是只有遇到蜡烛才更新前缀和。
          * 0,0,0,0,0,2,2,2,2,5
+         * Fixme: 每次查询才寻找盘子也超时了，需要预处理盘子的位置，找到对于每一个点左边和右边的盘子在哪
          */
         char[] array = s.toCharArray();
         int len = array.length;
@@ -38,17 +39,38 @@ class Solution {
                 sum += 1;
             }
         }
+
+        int[] leftPlates = new int[len];
+        int l = -1;//-1表示左边没有蜡烛
+        for (int i = 0; i < len; i++) {
+            if (array[i] == '|') {
+                l = i;
+            }
+            leftPlates[i] = l;
+        }
+
+        int[] rightPlates = new int[len];
+        int r = -1;//-1表示左边没有蜡烛
+        for (int i = len - 1; i >= 0; i--) {
+            if (array[i] == '|') {
+                r = i;
+            }
+            rightPlates[i] = r;
+        }
+
         int[] ans = new int[queries.length];
         for (int i = 0; i < queries.length; i++) {
             int left = queries[i][0];
             int right = queries[i][1];
-            while (left < right && array[left] != '|') {
-                left++;
+
+            int rightPlate = rightPlates[left];
+            int leftPlate = leftPlates[right];
+            if (rightPlate == -1 || leftPlate == -1 || leftPlate <=rightPlate) {
+                ans[i] = 0;
+            }else {
+                ans[i] = plates[leftPlate] - plates[rightPlate];
             }
-            while (right > left && array[right] != '|') {
-                right--;
-            }
-            ans[i] = plates[right] - plates[left];
+//            System.out.println("left=" + left + " right=" + right + " leftPlate" + leftPlate + " rightPlate" + rightPlate);
         }
         return ans;
 
