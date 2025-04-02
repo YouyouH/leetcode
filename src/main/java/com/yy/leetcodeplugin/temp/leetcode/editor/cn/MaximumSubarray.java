@@ -13,7 +13,7 @@ public class MaximumSubarray{
     }
     //leetcode submit region begin(Prohibit modification and deletion)
 class Solution {
-    public int maxSubArray(int[] nums) {
+    public int maxSubArray2(int[] nums) {
         /**
          * 穷解：？
          *
@@ -35,6 +35,28 @@ class Solution {
         }
         return ans;
     }
+
+        public int maxSubArray(int[] nums) {
+            /**
+             * 方案二 前缀和
+             * FIXME 前缀和最大值减去前缀和最小值
+             */
+
+            int len = nums.length;
+            int[] sum = new int[len];
+
+            sum[0] = nums[0];
+            int min = Math.min(0, nums[0]);//FIXME:遍历是从1开始的所以这里要提前判断
+            int res = nums[0];
+
+            for (int i = 1; i < len; i++) {
+                sum[i] = sum[i - 1] + nums[i];
+                res = Math.max(res, sum[i] - min);//FIXME 前缀和最大值减去前面前缀和的最小值，然后下一行再更新当前的最小值
+                min = Math.min(min, sum[i]);
+            }
+//            System.out.println("min=" + min);
+            return res;
+        }
 }
 //leetcode submit region end(Prohibit modification and deletion)
 
