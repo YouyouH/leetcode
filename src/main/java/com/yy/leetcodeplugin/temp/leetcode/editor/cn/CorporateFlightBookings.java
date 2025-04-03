@@ -17,25 +17,27 @@ class Solution {
     public int[] corpFlightBookings(int[][] bookings, int n) {
         /**
          * 需要不停的修改，使用差分数组
-         *  FIXME: 航班编号是从1开始的莫不是0，但是diff数组是从0开始的，所以航宝号要减一
+         *  FIXME: 航班编号是从1开始的，但是diff数组是从0开始的，所以航班号要减一
+         *
+         *  FIXME:写的太麻烦了
          */
 //        int maxFlight = Arrays.stream(bookings).max(Comparator.comparingInt(a -> a[1])).get()[1];
         int[] diff = new int[n];
         //构建差分数组
         for (int i = 0; i < bookings.length; i++) {
-            diff[bookings[i][0]-1] += bookings[i][2];
+            diff[bookings[i][0]-1] += bookings[i][2];//-1是因为航班号是从1开始
             if (bookings[i][1] < n) {
-                diff[bookings[i][1]] -= bookings[i][2];
+                diff[bookings[i][1]] -= bookings[i][2];//没有+1是因为航班号从1开始
             }
         }
+
+
         int[] res = new int[n];
-        int count = 0;
         int diffSum = 0;
-        for (int i = 0; i < diff.length; i++) {
+        for (int i = 0; i < n; i++) {
             diffSum += diff[i];
             if (diffSum > 0) {
-                res[count] = diffSum;
-                count++;
+                res[i] = diffSum;
             }
 
         }
